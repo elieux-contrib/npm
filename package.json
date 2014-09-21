@@ -1,5 +1,5 @@
 {
-  "version": "2.0.2",
+  "version": "2.0.2+mingw",
   "name": "npm",
   "description": "A package manager for node",
   "keywords": [
