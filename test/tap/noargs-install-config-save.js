@@ -39,9 +39,6 @@ function createChild (args) {
     PATH: process.env.PATH
   }
 
-  if (process.platform === "win32")
-    env.npm_config_cache = "%APPDATA%\\npm-cache"
-
   return spawn(node, args, {
     cwd: pkg,
     env: env

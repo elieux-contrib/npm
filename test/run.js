@@ -12,9 +12,7 @@ var path = require("path")
 var temp = process.env.TMPDIR
          || process.env.TMP
          || process.env.TEMP
-         || ( process.platform === "win32"
-            ? "c:\\windows\\temp"
-            : "/tmp" )
+         || "/tmp" )
 
 temp = path.resolve(temp, "npm-test-" + process.pid)
 
@@ -26,7 +24,7 @@ var failures = 0
 
 var pathEnvSplit = process.platform === "win32" ? ";" : ":"
   , pathEnv = process.env.PATH.split(pathEnvSplit)
-  , npmPath = process.platform === "win32" ? root : path.join(root, "bin")
+  , npmPath = path.join(root, "bin")
 
 pathEnv.unshift(npmPath, path.join(root, "node_modules", ".bin"))
 

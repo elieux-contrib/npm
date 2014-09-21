@@ -61,9 +61,6 @@ function createChild (args) {
     npm_config_loglevel: "silent"
   }
 
-  if (process.platform === "win32")
-    env.npm_config_cache = "%APPDATA%\\npm-cache"
-
   return spawn(node, args, {
     cwd: pkg,
     stdio: "inherit",
